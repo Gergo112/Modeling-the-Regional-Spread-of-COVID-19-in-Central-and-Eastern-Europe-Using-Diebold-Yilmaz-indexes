@@ -1,5 +1,5 @@
-# WD, INSTALL, LIBRARY, BEOLVAS¡S, ZOO ----------------------------------------
-setwd("D:/EGYETEM/VII. FÈlÈv/Szakdolgozat")
+# WD, INSTALL, LIBRARY, BEOLVAS√ÅS, ZOO ----------------------------------------
+setwd("D:/EGYETEM/VII. F√©l√©v/Szakdolgozat")
 
 #install.packages("devtools")
 #install.packages("knitr")
@@ -11,7 +11,7 @@ library(ConnectednessApproach)
 library(knitr)
 library(vars)
 
-# Beolvas·s Ès ·talakÌt·s
+# Beolvas√°s √©s √°talak√≠t√°s
 DATA = read.csv("DATA.csv")
 DATA$date <- as.Date(DATA$date)
 
@@ -47,7 +47,7 @@ for (w in window_sizes) {
   ))
 }
 
-# TCI kimentÈse
+# TCI kiment√©se
 
 dca_list <- list(
   "100" = dcaFULL100,
@@ -69,7 +69,7 @@ tciFULL <- data.frame(
 
 head(tciFULL)
 
-# ¡TLAGOL¡S
+# √ÅTLAGOL√ÅS
 
 avgFULL <- data.frame(
   Date = tciFULL$Date,
@@ -109,7 +109,7 @@ for (w in window_sizes) {
   ))
 }
 
-# TCI kimentÈse
+# TCI kiment√©se
 
 dca_list <- list(
   "100" = dcaPL100,
@@ -131,7 +131,7 @@ tciPL <- data.frame(
 
 head(tciPL)
 
-# ¡TLAGOL¡S
+# √ÅTLAGOL√ÅS
 
 avgPL <- data.frame(
   Date = tciPL$Date,
@@ -171,7 +171,7 @@ for (w in window_sizes) {
   ))
 }
 
-# TCI kimentÈse
+# TCI kiment√©se
 
 dca_list <- list(
   "100" = dcaHU_NEIGHBOUR100,
@@ -193,7 +193,7 @@ tciHU_NEIGHBOUR <- data.frame(
 
 head(tciHU_NEIGHBOUR)
 
-# ¡TLAGOL¡S
+# √ÅTLAGOL√ÅS
 
 avgHU_NEIGHBOUR <- data.frame(
   Date = tciHU_NEIGHBOUR$Date,
@@ -234,7 +234,7 @@ for (w in window_sizes) {
   ))
 }
 
-# TCI kimentÈse
+# TCI kiment√©se
 
 dca_list <- list(
   "100" = dcaHU100,
@@ -256,7 +256,7 @@ tciHU <- data.frame(
 
 head(tciHU)
 
-# ¡TLAGOL¡S
+# √ÅTLAGOL√ÅS
 
 avgHU <- data.frame(
   Date = tciHU$Date,
@@ -307,7 +307,7 @@ PlotTCI(dcaFULL150, ylim=c(70,100))
 
 dcaFULL150$TCI
 
-#WHO dataforr·st megnÈzni, miÈrt esik be
+#WHO dataforr√°st megn√©zni, mi√©rt esik be
 
 # TO
 PlotTO(dcaHU200, ylim=c(0,100))
@@ -331,15 +331,15 @@ PlotNetwork(dcaPL200, method="NPDC", threshold = 0.5)
 PlotNetwork(dcaFULL150, method="NPDC", threshold = 0.3)
 
 
-# NPDC kimenteni elsı hull·m, ny·ri sz¸net, m·sodik, harmadik, ny·ri sz¸net 1-1 reprezentatÌv napra Ès hasonlÛan kirajzolni
+# NPDC kimenteni els√µ hull√°m, ny√°ri sz√ºnet, m√°sodik, harmadik, ny√°ri sz√ºnet 1-1 reprezentat√≠v napra √©s hasonl√≥an kirajzolni
 # igraf csomag
-# tci plotokat 1 ·br·n
+# tci plotokat 1 √°br√°n
 
 
 
 # HUNGARY
 
-#HU ELS’ HULL¡M DECEMBER 1
+#HU ELS√ï HULL√ÅM DECEMBER 1
 
 dates_npdc <- as.Date(dimnames(dcaHU200$NPDC)[[3]])
 from <- as.Date("2020-12-01")
@@ -350,7 +350,7 @@ dcaHU200_filtered <- dcaHU200
 dcaHU200_filtered$NPDC <- NPDC_filtered
 PlotNetwork(dcaHU200_filtered, method="NPDC")
 
-#HU ELS’ HULL¡M NOVEMBER - JANU¡R
+#HU ELS√ï HULL√ÅM NOVEMBER - JANU√ÅR
 
 dates_npdc <- as.Date(dimnames(dcaHU200$NPDC)[[3]])
 from <- as.Date("2020-11-01")
@@ -361,7 +361,7 @@ dcaHU200_filtered <- dcaHU200
 dcaHU200_filtered$NPDC <- NPDC_filtered
 PlotNetwork(dcaHU200_filtered, method="NPDC")
 
-#HU M¡SODIK HULL¡M ¡PRILIS 1
+#HU M√ÅSODIK HULL√ÅM √ÅPRILIS 1
 
 dates_npdc <- as.Date(dimnames(dcaHU200$NPDC)[[3]])
 from <- as.Date("2021-04-01")
@@ -372,7 +372,7 @@ dcaHU200_filtered <- dcaHU200
 dcaHU200_filtered$NPDC <- NPDC_filtered
 PlotNetwork(dcaHU200_filtered, method="NPDC")
 
-#HU M¡SODIK HULL¡M M¡RCIUS - M¡JUS
+#HU M√ÅSODIK HULL√ÅM M√ÅRCIUS - M√ÅJUS
 
 dates_npdc <- as.Date(dimnames(dcaHU200$NPDC)[[3]])
 from <- as.Date("2021-03-01")
@@ -383,7 +383,7 @@ dcaHU200_filtered <- dcaHU200
 dcaHU200_filtered$NPDC <- NPDC_filtered
 PlotNetwork(dcaHU200_filtered, method="NPDC")
 
-#HU NY¡RI SZ‹NET AUGUSZTUS 1
+#HU NY√ÅRI SZ√úNET AUGUSZTUS 1
 
 dates_npdc <- as.Date(dimnames(dcaHU200$NPDC)[[3]])
 from <- as.Date("2021-08-01")
@@ -394,7 +394,7 @@ dcaHU200_filtered <- dcaHU200
 dcaHU200_filtered$NPDC <- NPDC_filtered
 PlotNetwork(dcaHU200_filtered, method="NPDC")
 
-#HU NY¡RI SZ‹NET J⁄NIUS - SZEPTEMBER
+#HU NY√ÅRI SZ√úNET J√öNIUS - SZEPTEMBER
 
 dates_npdc <- as.Date(dimnames(dcaHU200$NPDC)[[3]])
 from <- as.Date("2021-06-01")
@@ -405,7 +405,7 @@ dcaHU200_filtered <- dcaHU200
 dcaHU200_filtered$NPDC <- NPDC_filtered
 PlotNetwork(dcaHU200_filtered, method="NPDC")
 
-#HU HARMADIK HULL¡M DECEMBER 1
+#HU HARMADIK HULL√ÅM DECEMBER 1
 
 dates_npdc <- as.Date(dimnames(dcaHU200$NPDC)[[3]])
 from <- as.Date("2021-12-01")
@@ -416,7 +416,7 @@ dcaHU200_filtered <- dcaHU200
 dcaHU200_filtered$NPDC <- NPDC_filtered
 PlotNetwork(dcaHU200_filtered, method="NPDC")
 
-#HU HARMADIK HULL¡M NOVEMBER - JANU¡R
+#HU HARMADIK HULL√ÅM NOVEMBER - JANU√ÅR
 
 dates_npdc <- as.Date(dimnames(dcaHU200$NPDC)[[3]])
 from <- as.Date("2021-11-01")
@@ -431,7 +431,7 @@ PlotNetwork(dcaHU200_filtered, method="NPDC")
 
 # POLAND
 
-#PL ELS’ HULL¡M DECEMBER 1
+#PL ELS√ï HULL√ÅM DECEMBER 1
 dates_npdc <- as.Date(dimnames(dcaPL200$NPDC)[[3]])
 from <- as.Date("2020-12-01")
 to   <- as.Date("2020-12-02")
@@ -441,7 +441,7 @@ dcaPL200_filtered <- dcaPL200
 dcaPL200_filtered$NPDC <- NPDC_filtered
 PlotNetwork(dcaPL200_filtered, method="NPDC", threshold = 0.5)
 
-#PL ELS’ HULL¡M NOVEMBER - JANU¡R
+#PL ELS√ï HULL√ÅM NOVEMBER - JANU√ÅR
 dates_npdc <- as.Date(dimnames(dcaPL200$NPDC)[[3]])
 from <- as.Date("2020-11-01")
 to   <- as.Date("2021-01-01")
@@ -451,7 +451,7 @@ dcaPL200_filtered <- dcaPL200
 dcaPL200_filtered$NPDC <- NPDC_filtered
 PlotNetwork(dcaPL200_filtered, method="NPDC", threshold = 0.5)
 
-#PL M¡SODIK HULL¡M ¡PRILIS 1
+#PL M√ÅSODIK HULL√ÅM √ÅPRILIS 1
 dates_npdc <- as.Date(dimnames(dcaPL200$NPDC)[[3]])
 from <- as.Date("2021-04-01")
 to   <- as.Date("2021-04-02")
@@ -461,7 +461,7 @@ dcaPL200_filtered <- dcaPL200
 dcaPL200_filtered$NPDC <- NPDC_filtered
 PlotNetwork(dcaPL200_filtered, method="NPDC", threshold = 0.5)
 
-#PL M¡SODIK HULL¡M M¡RCIUS - M¡JUS
+#PL M√ÅSODIK HULL√ÅM M√ÅRCIUS - M√ÅJUS
 dates_npdc <- as.Date(dimnames(dcaPL200$NPDC)[[3]])
 from <- as.Date("2021-03-01")
 to   <- as.Date("2021-05-01")
@@ -471,7 +471,7 @@ dcaPL200_filtered <- dcaPL200
 dcaPL200_filtered$NPDC <- NPDC_filtered
 PlotNetwork(dcaPL200_filtered, method="NPDC", threshold = 0.5)
 
-#PL NY¡RI SZ‹NET AUGUSZTUS 1
+#PL NY√ÅRI SZ√úNET AUGUSZTUS 1
 dates_npdc <- as.Date(dimnames(dcaPL200$NPDC)[[3]])
 from <- as.Date("2021-08-01")
 to   <- as.Date("2021-08-02")
@@ -481,7 +481,7 @@ dcaPL200_filtered <- dcaPL200
 dcaPL200_filtered$NPDC <- NPDC_filtered
 PlotNetwork(dcaPL200_filtered, method="NPDC", threshold = 0.5)
 
-#PL NY¡RI SZ‹NET J⁄NIUS - SZEPTEMBER
+#PL NY√ÅRI SZ√úNET J√öNIUS - SZEPTEMBER
 dates_npdc <- as.Date(dimnames(dcaPL200$NPDC)[[3]])
 from <- as.Date("2021-06-01")
 to   <- as.Date("2021-09-01")
@@ -491,7 +491,7 @@ dcaPL200_filtered <- dcaPL200
 dcaPL200_filtered$NPDC <- NPDC_filtered
 PlotNetwork(dcaPL200_filtered, method="NPDC", threshold = 0.5)
 
-#PL HARMADIK HULL¡M DECEMBER 1
+#PL HARMADIK HULL√ÅM DECEMBER 1
 dates_npdc <- as.Date(dimnames(dcaPL200$NPDC)[[3]])
 from <- as.Date("2021-12-01")
 to   <- as.Date("2021-12-02")
@@ -501,7 +501,7 @@ dcaPL200_filtered <- dcaPL200
 dcaPL200_filtered$NPDC <- NPDC_filtered
 PlotNetwork(dcaPL200_filtered, method="NPDC", threshold = 0.5)
 
-#PL HARMADIK HULL¡M NOVEMBER - JANU¡R
+#PL HARMADIK HULL√ÅM NOVEMBER - JANU√ÅR
 dates_npdc <- as.Date(dimnames(dcaPL200$NPDC)[[3]])
 from <- as.Date("2021-11-01")
 to   <- as.Date("2022-01-01")
@@ -515,7 +515,7 @@ PlotNetwork(dcaPL200_filtered, method="NPDC", threshold = 0.5)
 
 # HUNGARY + NEIGHBOUR
 
-#HU NEIGHBOUR ELS’ HULL¡M DECEMBER 1
+#HU NEIGHBOUR ELS√ï HULL√ÅM DECEMBER 1
 dates_npdc <- as.Date(dimnames(dcaHU_NEIGHBOUR200$NPDC)[[3]])
 from <- as.Date("2020-12-01")
 to   <- as.Date("2020-12-02")
@@ -525,7 +525,7 @@ dcaHU_NEIGHBOUR200_filtered <- dcaHU_NEIGHBOUR200
 dcaHU_NEIGHBOUR200_filtered$NPDC <- NPDC_filtered
 PlotNetwork(dcaHU_NEIGHBOUR200_filtered, method="NPDC", threshold = 0.2)
 
-#HU NEIGHBOUR ELS’ HULL¡M NOVEMBER - JANU¡R
+#HU NEIGHBOUR ELS√ï HULL√ÅM NOVEMBER - JANU√ÅR
 dates_npdc <- as.Date(dimnames(dcaHU_NEIGHBOUR200$NPDC)[[3]])
 from <- as.Date("2020-11-01")
 to   <- as.Date("2021-01-01")
@@ -535,7 +535,7 @@ dcaHU_NEIGHBOUR200_filtered <- dcaHU_NEIGHBOUR200
 dcaHU_NEIGHBOUR200_filtered$NPDC <- NPDC_filtered
 PlotNetwork(dcaHU_NEIGHBOUR200_filtered, method="NPDC", threshold = 0.2)
 
-#HU NEIGHBOUR M¡SODIK HULL¡M ¡PRILIS 1
+#HU NEIGHBOUR M√ÅSODIK HULL√ÅM √ÅPRILIS 1
 dates_npdc <- as.Date(dimnames(dcaHU_NEIGHBOUR200$NPDC)[[3]])
 from <- as.Date("2021-04-01")
 to   <- as.Date("2021-04-02")
@@ -545,7 +545,7 @@ dcaHU_NEIGHBOUR200_filtered <- dcaHU_NEIGHBOUR200
 dcaHU_NEIGHBOUR200_filtered$NPDC <- NPDC_filtered
 PlotNetwork(dcaHU_NEIGHBOUR200_filtered, method="NPDC", threshold = 0.2)
 
-#HU NEIGHBOUR M¡SODIK HULL¡M M¡RCIUS - M¡JUS
+#HU NEIGHBOUR M√ÅSODIK HULL√ÅM M√ÅRCIUS - M√ÅJUS
 dates_npdc <- as.Date(dimnames(dcaHU_NEIGHBOUR200$NPDC)[[3]])
 from <- as.Date("2021-03-01")
 to   <- as.Date("2021-05-01")
@@ -555,7 +555,7 @@ dcaHU_NEIGHBOUR200_filtered <- dcaHU_NEIGHBOUR200
 dcaHU_NEIGHBOUR200_filtered$NPDC <- NPDC_filtered
 PlotNetwork(dcaHU_NEIGHBOUR200_filtered, method="NPDC", threshold = 0.2)
 
-#HU NEIGHBOUR NY¡RI SZ‹NET AUGUSZTUS 1
+#HU NEIGHBOUR NY√ÅRI SZ√úNET AUGUSZTUS 1
 dates_npdc <- as.Date(dimnames(dcaHU_NEIGHBOUR200$NPDC)[[3]])
 from <- as.Date("2021-08-01")
 to   <- as.Date("2021-08-02")
@@ -565,7 +565,7 @@ dcaHU_NEIGHBOUR200_filtered <- dcaHU_NEIGHBOUR200
 dcaHU_NEIGHBOUR200_filtered$NPDC <- NPDC_filtered
 PlotNetwork(dcaHU_NEIGHBOUR200_filtered, method="NPDC", threshold = 0.2)
 
-#HU NEIGHBOUR NY¡RI SZ‹NET J⁄NIUS - SZEPTEMBER
+#HU NEIGHBOUR NY√ÅRI SZ√úNET J√öNIUS - SZEPTEMBER
 dates_npdc <- as.Date(dimnames(dcaHU_NEIGHBOUR200$NPDC)[[3]])
 from <- as.Date("2021-06-01")
 to   <- as.Date("2021-09-01")
@@ -575,7 +575,7 @@ dcaHU_NEIGHBOUR200_filtered <- dcaHU_NEIGHBOUR200
 dcaHU_NEIGHBOUR200_filtered$NPDC <- NPDC_filtered
 PlotNetwork(dcaHU_NEIGHBOUR200_filtered, method="NPDC", threshold = 0.2)
 
-#HU NEIGHBOUR HARMADIK HULL¡M DECEMBER 1
+#HU NEIGHBOUR HARMADIK HULL√ÅM DECEMBER 1
 dates_npdc <- as.Date(dimnames(dcaHU_NEIGHBOUR200$NPDC)[[3]])
 from <- as.Date("2021-12-01")
 to   <- as.Date("2021-12-02")
@@ -585,7 +585,7 @@ dcaHU_NEIGHBOUR200_filtered <- dcaHU_NEIGHBOUR200
 dcaHU_NEIGHBOUR200_filtered$NPDC <- NPDC_filtered
 PlotNetwork(dcaHU_NEIGHBOUR200_filtered, method="NPDC", threshold = 0.2)
 
-#HU NEIGHBOUR HARMADIK HULL¡M NOVEMBER - JANU¡R
+#HU NEIGHBOUR HARMADIK HULL√ÅM NOVEMBER - JANU√ÅR
 dates_npdc <- as.Date(dimnames(dcaHU_NEIGHBOUR200$NPDC)[[3]])
 from <- as.Date("2021-11-01")
 to   <- as.Date("2022-01-01")
@@ -599,7 +599,7 @@ PlotNetwork(dcaHU_NEIGHBOUR200_filtered, method="NPDC", threshold = 0.2)
 
 # FULL
 
-#FULL150 ELS’ HULL¡M DECEMBER 1
+#FULL150 ELS√ï HULL√ÅM DECEMBER 1
 dates_npdc <- as.Date(dimnames(dcaFULL150$NPDC)[[3]])
 from <- as.Date("2020-12-01")
 to   <- as.Date("2020-12-02")
@@ -609,7 +609,7 @@ dcaFULL150_filtered <- dcaFULL150
 dcaFULL150_filtered$NPDC <- NPDC_filtered
 PlotNetwork(dcaFULL150_filtered, method="NPDC", threshold = 0.5)
 
-#FULL150 ELS’ HULL¡M NOVEMBER - JANU¡R
+#FULL150 ELS√ï HULL√ÅM NOVEMBER - JANU√ÅR
 dates_npdc <- as.Date(dimnames(dcaFULL150$NPDC)[[3]])
 from <- as.Date("2020-11-01")
 to   <- as.Date("2021-01-01")
@@ -619,7 +619,7 @@ dcaFULL150_filtered <- dcaFULL150
 dcaFULL150_filtered$NPDC <- NPDC_filtered
 PlotNetwork(dcaFULL150_filtered, method="NPDC", threshold = 0.4)
 
-#FULL150 M¡SODIK HULL¡M ¡PRILIS 1
+#FULL150 M√ÅSODIK HULL√ÅM √ÅPRILIS 1
 dates_npdc <- as.Date(dimnames(dcaFULL150$NPDC)[[3]])
 from <- as.Date("2021-04-01")
 to   <- as.Date("2021-04-02")
@@ -629,7 +629,7 @@ dcaFULL150_filtered <- dcaFULL150
 dcaFULL150_filtered$NPDC <- NPDC_filtered
 PlotNetwork(dcaFULL150_filtered, method="NPDC", threshold = 0.5)
 
-#FULL150 M¡SODIK HULL¡M M¡RCIUS - M¡JUS
+#FULL150 M√ÅSODIK HULL√ÅM M√ÅRCIUS - M√ÅJUS
 dates_npdc <- as.Date(dimnames(dcaFULL150$NPDC)[[3]])
 from <- as.Date("2021-03-01")
 to   <- as.Date("2021-05-01")
@@ -639,7 +639,7 @@ dcaFULL150_filtered <- dcaFULL150
 dcaFULL150_filtered$NPDC <- NPDC_filtered
 PlotNetwork(dcaFULL150_filtered, method="NPDC", threshold = 0.4)
 
-#FULL150 NY¡RI SZ‹NET AUGUSZTUS 1
+#FULL150 NY√ÅRI SZ√úNET AUGUSZTUS 1
 dates_npdc <- as.Date(dimnames(dcaFULL150$NPDC)[[3]])
 from <- as.Date("2021-08-01")
 to   <- as.Date("2021-08-02")
@@ -649,7 +649,7 @@ dcaFULL150_filtered <- dcaFULL150
 dcaFULL150_filtered$NPDC <- NPDC_filtered
 PlotNetwork(dcaFULL150_filtered, method="NPDC", threshold = 0.5)
 
-#FULL150 NY¡RI SZ‹NET J⁄NIUS - SZEPTEMBER
+#FULL150 NY√ÅRI SZ√úNET J√öNIUS - SZEPTEMBER
 dates_npdc <- as.Date(dimnames(dcaFULL150$NPDC)[[3]])
 from <- as.Date("2021-06-01")
 to   <- as.Date("2021-09-01")
@@ -659,7 +659,7 @@ dcaFULL150_filtered <- dcaFULL150
 dcaFULL150_filtered$NPDC <- NPDC_filtered
 PlotNetwork(dcaFULL150_filtered, method="NPDC", threshold = 0.4)
 
-#FULL150 HARMADIK HULL¡M DECEMBER 1
+#FULL150 HARMADIK HULL√ÅM DECEMBER 1
 dates_npdc <- as.Date(dimnames(dcaFULL150$NPDC)[[3]])
 from <- as.Date("2021-12-01")
 to   <- as.Date("2021-12-02")
@@ -669,7 +669,7 @@ dcaFULL150_filtered <- dcaFULL150
 dcaFULL150_filtered$NPDC <- NPDC_filtered
 PlotNetwork(dcaFULL150_filtered, method="NPDC", threshold = 0.4)
 
-#FULL150 HARMADIK HULL¡M NOVEMBER - JANU¡R
+#FULL150 HARMADIK HULL√ÅM NOVEMBER - JANU√ÅR
 dates_npdc <- as.Date(dimnames(dcaFULL150$NPDC)[[3]])
 from <- as.Date("2021-11-01")
 to   <- as.Date("2022-01-01")
